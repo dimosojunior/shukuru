@@ -1,0 +1,82 @@
+{% extends 'project1/base.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="{% static 'project1/css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    
+    <!-- Custom Theme files -->
+    <link href="{% static 'project1/css/animate.css' %}" rel="stylesheet" type="text/css" media="all">
+    <script src="js/wow.min.js"></script><script src="js/jquery-1.12.0.min.js"></script>
+    <script src="{% static 'project1/js/bootstrap.min.js' %}"></script>
+      <link rel="stylesheet" href="kaz/activity/css/style.css">
+    <style>
+         input{
+            padding: 5px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            width: 8cm;
+        }
+      
+    </style>
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+      <div style="margin-top:5rem;" class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <div class="container-fluid">
+    <div class="row">
+
+    <div class="col-md-4">
+      <div class="photo">
+        <img src="{% static 'project1/images/w.jpeg' %}" alt="" style="width: 500px;">
+    
+    </div><!--mwisho wa column 4-->
+    </div>
+
+   <div class="col-md-6"> 
+
+  <div style="text-align: center;margin-top: 5px;background-color: lightblue;">
+     <h1 style="font-family: bold;">Beco Mauzo Login Page</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+<label>UserName</label><br>
+<input type="text" name="username"><br>
+
+<label>Password</label><br>
+<input type="text" name="password"><br>
+
+<button type="submit">Login</button>
+
+</form>
+</div>
+</div><!--mwisho wa column ya width 6-->
+</div><!--mwisho wa row-->
+</div><!--mwisho wa column-->
+    <script src={% static 'project1/"js/wow.min.js' %}"></script><script src="js/jquery-1.12.0.min.js"></script>
+<script src="{% static 'project1/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
+{% endblock %}

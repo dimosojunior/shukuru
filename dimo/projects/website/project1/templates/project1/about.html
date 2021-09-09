@@ -1,0 +1,351 @@
+{% extends 'project1/base.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="{% static 'project1/css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+
+<!-- Custom Theme files -->
+<link href="{% static 'project1/css/animate.css' %}" rel="stylesheet" type="text/css" media="all">
+<script src="js/wow.min.js"></script><script src="js/jquery-1.12.0.min.js"></script>
+<script src="{% static 'project1/js/bootstrap.min.js' %}"></script>
+  <link rel="stylesheet" href="kaz/activity/css/style.css">
+	<style type="text/css">
+
+/* style for About me Page*/
+
+
+.headings{
+	font-family: century;
+	font-size: 20px;
+	text-align: center;
+	margin: 0px 0px;
+	color:black;
+	font-weight:bold;
+}
+
+#about{
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 20px;
+	margin-bottom: 50px;
+
+}
+
+#picha{
+margin-top:30px;
+}
+#picha img{
+	
+	width: 100%;
+}
+#intro{
+
+	text-align: justify;
+	padding: 10px;
+    
+}
+
+#intro h2{
+	font-size: 2rem;
+	margin-bottom: 5px;
+	font-weight:bold;
+	font-family:bold;
+	color:black;
+}
+.btni{
+	margin-top: 20px;
+	border-radius: 15px;
+}
+
+#intro p{
+	font-size: 20px;
+}
+#intro p .btni a{
+    margin-top: 50px;
+	padding: 10px 35px;
+	background-color: blue;
+	border: 1px solid white;
+	color: white;
+	font-weight: bold;
+	outline: none;
+	transition: .6s ease;
+	text-decoration: none;
+
+	border-radius: 15px;
+
+
+}
+
+#intro p .btni a:hover{
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 15px yellow;
+	font-weight: bold;
+
+
+}
+/* style for my images */
+#images{
+	
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	align-items: center;
+	padding: 20px;
+}
+.gallery{
+	
+	margin-left: 10px;
+	box-sizing: border-box;
+}
+.gallery img{
+	
+	height: 200px;
+	margin: 10px;
+    width: 100%;
+}
+
+
+/*educationa background section */
+#elimu{
+
+padding: 20px;
+}
+/*
+.box{
+
+
+
+border: 1px solid black;
+margin: 10px;
+align-items: center;
+text-align: justify;
+padding: 10px;
+border-radius: 15px;
+background: linear-gradient(to top, lightblue 50%, white 50%);
+background-size: 100% 200%;
+transition: all .8s;
+
+}
+*/
+
+.box p{
+	color: black;
+	font-weight: bold;
+	font-family: bold;
+	font-size: 18px;
+}
+.box:hover{
+	background-position: left bottom;
+	color: black;
+	border: none;
+	box-shadow: 0 0 20px rgba(255,45,45);
+	font-weight: bold;
+	font-family: bold;
+}
+.box img{
+	width: 150px;
+	height: 150px;
+	background-color: white;
+	padding: 10px;
+}
+.btn{
+	margin-top: 50px;
+	}
+/*
+.btn{
+	margin-top: 50px;
+	padding: 10px 35px;
+	background-color: blue;
+	border: 1px solid white;
+	color: white;
+	font-weight: bold;
+	outline: none;
+	transition: .6s ease;
+}
+.btn:hover{
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 15px yellow;
+	font-weight: bold;
+} */
+.box p .btn a{
+	margin-top: 50px;
+	padding: 10px 35px;
+	background-color: blue;
+	border: 1px solid white;
+	color: white;
+	font-weight: bold;
+	outline: none;
+	transition: .6s ease;
+	text-decoration: none;
+
+
+
+}
+.box p .btn a:hover{
+
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 15px yellow;
+	font-weight: bold;
+
+}
+
+
+	</style>
+
+	
+
+
+
+</head>
+<body>
+  
+
+
+<div style="background-color: red;">
+	<h1 class="headings">ABOUT BECO MAUZO</h1>
+</div>
+
+	<div class="row">
+
+		<div class="col-md-4">
+			<div id="picha">
+        {% for x in headerimage %}
+
+        <img src="{{x.image.url}}">
+        {% endfor %}
+        
+
+    </div>
+    </div>
+		
+
+		<div class="col-md-8">
+			<div id="intro">
+            <h2 >BECO MAUZO</h2>
+            {% for x in headerimage %}
+            <p style="font-weight: bold;">
+                
+
+                {{x.content}}
+       
+
+			
+            </p>
+            {% endfor %}
+
+        </div>
+        </div>
+
+		
+
+
+	</div><!--kufunga div ya  row----->
+
+
+<!---picha----->
+
+    
+
+<section id="images">
+	<h1 class="headings">SERVICE IMAGES </h1>
+	<div class="gallery">
+        
+        
+        <div class="row"></div>
+        <div class="col-md-4"></div>
+        {% for x in ourimage %}
+        <img src="{{x.image.url}}">
+        {% endfor %}
+    </div>
+</div><!--mwisho wa row ya picha-->
+       
+	
+
+
+
+	</div>
+
+
+</section>
+
+
+<!---mwisho wa picha----->
+
+
+
+	<div class="row">
+
+<section id="elimu">
+	<h1 class="headings">ABOUT BECO MAUZO</h1>
+</section>
+
+	<div class="row">
+        {% for x in paragraphimage %}
+<div class="col-md-4">
+		<div class="box">
+			<img src="{{x.image.url}}">
+			<h1 class="headings">{{x.title}}</h1>
+			<p>
+                {{x.content}}
+		<!----	Marry Designer tunatoa mafunzo ya ushonaji na utengenezaji wa nguo aina zote kama vile nguoza maharusi, nguo za sherehe mbalimbali za kidini na za kijamii kama vile sherehe za kipaimara, sherehe za komnio, ubatizo na kazalika. Tutakufundisha jinsi ya kutengeneza na kushona, mafunzo yote hayo yatatolewa kwa muda mfupi na kwa gharama nafuu tu.<br> Ili kupata huduma hii ya mafunzo au kwa maelezo zaidi wasiliana nasi kwa kubonyesha hiyo batani hapo chini.<br>
+			---><button class="btn"><a href="/product_list"> Click Here</a></button>
+			</p>
+
+		</div>
+</div>
+     {% endfor %}
+		<!---<div class="col-md-4">
+		<div class="box">
+			<img src="{% static 'project1/images/m9.jpg' %}">
+			<h1 class="headings">Mahitaji Ya Kushonesha Nguo</h1>
+			<p>
+					Marry Designer tunatoa huduma ya ushonaji na utengenezaji wa nguo aina zote kama vile nguoza maharusi, nguo za sherehe mbalimbali za kidini na za kijamii kama vile sherehe za kipaimara, sherehe za komnio, ubatizo na kazalika. Kupitia kwa mafundi wetu hodari waliobobea katika utengenezaji na ushonaji wa nguo mbalimbali pamoja na mimi tutakuhudumia kwa muda mfupi na kwa gharama nafuu tu.<br> Ili kupata huduma hii ya mafunzo au kwa maelezo zaidi wasiliana nasi kwa kubonyesha hiyo batani hapo chini.<br>
+			<button class="btn"><a href="contact.php">Click Here</a></button>
+
+			</p>
+
+		</div>
+</div>
+		<div class="col-md-4">
+		<div class="box">
+			<img src="{% static 'project1/images/m9.jpg' %}">
+			<h1 class="headings">Kurudisha Nguo Zilizoharibika</h1>
+			<p>
+				Marry Designer tunatoa huduma ya kurudisha au kurepair nguo zilizoharibika kutokana na sababu mbalimbali kwa jinsia zote wavulana kwa wasichana , Kupitia kwa mafundi wetu hodari waliobobea katika utengenezaji na ushonaji wa nguo mbalimbali pamoja na mimi tutakuhudumia kwa muda mfupi na kwa gharama nafuu tu.<br> Ili kupata huduma hii ya mafunzo au kwa maelezo zaidi wasiliana nasi kwa kubonyesha hiyo batani hapo chini.<br>
+			<button class="btn"><a href="contact.php">Click Here</a></button>
+
+			</p>
+
+		</div>
+</div>----->
+
+	</div>	<!---kufunga kwa  row  ya maelezo--->
+
+
+
+
+	</div><!--kufunga kwa class  row--->
+	
+
+  <script src={% static 'project1/"js/wow.min.js' %}"></script><script src="js/jquery-1.12.0.min.js"></script>
+<script src="{% static 'project1/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
+{% endblock %}

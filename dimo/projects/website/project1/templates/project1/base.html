@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}BASE PAGE {% endblock %}</title>
+    <style>
+   
+
+
+
+/* header */
+.header1{
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/banner-bg.jpg) center/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+.navbar{
+    background-color: black;
+    padding: 1.2rem;
+}
+.navbar-brand{
+    color: #fff;
+    font-size: 2rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--Playfair);
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.navbar-nav{
+    padding: 0.8rem 0 0.2rem 0;
+    text-align: center;
+    display: flex;
+}
+.navbar-nav ul li{
+  display: inline-block;
+}
+.navbar-nav ul li a{
+    text-transform: uppercase;
+    font-family: var(--Roboto);
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    padding: 0.4rem 0.1rem;
+    letter-spacing: 3px;
+    transition: opacity 0.5s ease;
+}
+.navbar-nav a:hover{
+    opacity: 0.7;
+    color: red;
+    
+}
+
+
+
+
+
+
+
+
+
+
+}
+footer{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #111;
+  text-decoration: none;
+}
+.middle a{
+    text-decoration: none;
+}
+footer .content{
+  max-width: 1350px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .content p,a{
+  color: #fff;
+}
+footer .content .box{
+  width: 33%;
+  transition: all 0.4s ease;
+}
+footer .content .topic{
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+
+}
+footer .content p{
+  text-align: justify;
+}
+footer .content .lower .topic{
+  margin: 24px 0 5px 0;
+}
+footer .content .lower i{
+  padding-right: 16px;
+}
+footer .content .middle{
+  padding-left: 80px;
+}
+footer .content .middle a{
+  line-height: 32px;
+}
+footer .content .right input[type="text"]{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  color: #d9d9d9;
+  background: #000;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 2px solid #222222;
+}
+footer .content .right input[type="submit"]{
+  height: 42px;
+  width: 100%;
+  font-size: 18px;
+  color: #d9d9d9;
+  background: #eb2f06;
+  outline: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 12px;
+  border: 2px solid #eb2f06;
+  transition: all 0.3s ease-in-out;
+}
+.content .right input[type="submit"]:hover{
+  background: none;
+  color:  #eb2f06;
+}
+footer .content .media-icons a{
+  font-size: 16px;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  text-align: center;
+  line-height: 43px;
+  border-radius: 5px;
+  border: 2px solid #222222;
+  margin: 30px 5px 0 0;
+  transition: all 0.3s ease;
+}
+.content .media-icons a:hover{
+  border-color: #eb2f06;
+}
+footer .bottom{
+  width: 100%;
+  text-align: right;
+  color: #d9d9d9;
+  padding: 0 40px 5px 0;
+}
+footer .bottom a{
+  color: #eb2f06;
+}
+footer a{
+  transition: all 0.3s ease;
+}
+footer a:hover{
+  color: #eb2f06;
+}
+@media (max-width:1100px) {
+  footer .content .middle{
+    padding-left: 50px;
+  }
+}
+@media (max-width:950px){
+  footer .content .box{
+    width: 50%;
+  }
+  .content .right{
+    margin-top: 40px;
+  }
+}
+@media (max-width:560px){
+  footer{
+    position: relative;
+  }
+  footer .content .box{
+    width: 100%;
+    margin-top: 30px;
+  }
+  footer .content .middle{
+    padding-left: 0;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+<div class=".header1">
+ 
+    <nav class = "navbar">
+      <div class = "container">
+        {% if user.is_superuser %}
+        
+        <a href = "/admin" class = "navbar-brand">ADMIN</a>
+        {% endif %}
+        <a href = "#" class = "navbar-brand"> BECO MAUZO</a>
+        <div class = "navbar-nav">
+          <ul>
+            
+            <li ><a href = ""><p style="color: red;">Welcome {{ user.username }}</p></a></li> 
+        <li><a href = "/">Home</a></li> 
+        <li><a href = "/about">About</a></li> 
+        <li><a href = "/product_list">Services</a></li> 
+        <li><a href = "/order_summary">Order</a></li> 
+        <li><a href = "">Contact</a></li>  
+        {% if user.is_authenticated %}
+        <li><a href = "{% url 'user_logout' %}">logout</a></li> 
+        {% else %}
+        <li><a href = "{% url 'user_login' %}">login</a></li> 
+        <li><a href = "{% url 'user_register' %}">register</a></li> 
+         
+        {% endif %}
+      </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- end of header -->
+  
+    <!--------
+    <header>
+       
+        <ul class="navigation">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/contact">CONTACT</a></li>
+            <li><a href="/services">SERVICES</a></li>
+            <li><a href="team/">TEAM</a></li>
+    
+        </ul>
+    
+    
+        </header>------>
+        
+
+
+{% block content %}
+
+<h1>WELCOME  TO  MY WEBSITE</h1>
+
+{% endblock %}
+
+<footer style="background-color: black;margin-top: 40px;">
+    <div class="content">
+      <div class="left box">
+        <div class="upper">
+          <div class="topic">About us</div>
+          <p>Beco Moore ni kampuni ya kitanzania inayojihusisha na kuwawezesha wanafunzi wa kozi ya computer Engineering 
+              Must kutangaza,kuuza na kununua bidhaa mbalimabali.
+          </p>
+        </div>
+        <div class="lower">
+          <div class="topic">Contact us</div>
+          <div class="phone">
+            <a href="#"><i class="fas fa-phone-volume"></i>+255 628 431</a>
+          </div>
+          <div class="email">
+            <a href="#"><i class="fas fa-envelope"></i>juniordimoso8@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="middle box" style="text-decoration: none;">
+        <div class="topic">Our Services</div>
+        <div><a href="#" style="text-decoration: none;">Web Design And Development</a></div>
+        <div><a href="#">Graphic Designing</a></div>
+        <div><a href="#">Video Production</a></div>
+        <div><a href="#">Marketing</a></div>
+        <div><a href="#">Mobile App </a></div>
+        <div><a href="#">Advertisement</a></div>
+      </div>
+      <div class="right box">
+        <div class="topic">Follow us</div>
+        <form action="#">
+          <input type="text" placeholder="Enter email address">
+          <input type="submit" name="" value="Send">
+          <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+           
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="bottom">
+      <p>Copyright © 2020 <a href="#">Dimoso El Junior</a> All rights reserved</p>
+    </div>
+  </footer>
+</body>
+</html>

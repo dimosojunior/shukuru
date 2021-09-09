@@ -1,0 +1,388 @@
+{% extends 'project1/base.html' %}
+{% load static %}
+{% block title %}Maryy Designer Home Page{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="{% static 'project1/css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+
+<!-- Custom Theme files -->
+<link href="{% static 'project1/css/animate.css' %}" rel="stylesheet" type="text/css" media="all">
+<script src="js/wow.min.js"></script><script src="js/jquery-1.12.0.min.js"></script>
+<script src="{% static 'project1/js/bootstrap.min.js' %}"></script>
+  <link rel="stylesheet" href="kaz/activity/css/style.css">
+	<style type="text/css">
+
+				@import url('https://fonts.googleapis.com/css?family=Roboto:700&display=swap');
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'poppins', sans-serif;
+}
+body{
+	background-color: white;
+	background-size: cover;
+  overflow-x: hidden;
+
+}
+
+
+
+.search input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	background: transparent;
+	outline: none;
+	border-radius: 4px;
+	padding: 0 10px 0 45px;
+	border: 1px solid rgba(255,255,255,0.5);
+	backdrop-filter:blur;
+}
+.search input::placeholder{
+	color: #fff;
+}
+.center{
+
+
+	margin-top: 15cm;
+}
+h1{
+	text-align: center;
+	font-weight: bold;
+	font-family: bold;
+	font-size: 30px;
+	margin-bottom: 25px;
+  color: yellow;
+}
+.a{
+	color: white;
+	font-size: 60px;
+	font-weight: bold;
+	text-shadow: 15px;
+	text-align: center;
+	margin-top: 3cm;
+
+}
+.a span{
+	color: green;
+}
+
+
+.btn{
+  margin-top: 10px;
+  margin-bottom: 10PX;
+  }
+/*
+.btn{
+  margin-top: 50px;
+  padding: 10px 35px;
+  background-color: blue;
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  transition: .6s ease;
+}
+.btn:hover{
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 15px yellow;
+  font-weight: bold;
+} */
+ .btn a{
+  margin-top: 50px;
+  padding: 10px 35px;
+  background-color: blue;
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  transition: .6s ease;
+  text-decoration: none;
+
+
+
+}
+.btn a:hover{
+
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 15px yellow;
+  font-weight: bold;
+
+}
+
+
+
+
+	</style>
+
+</head>
+<body>
+  <div class="container">
+
+    <div class="row">
+        {% for x in background %}
+      <div class="col-md-9" style="background: url({{x.image.url}});background-repeat: no-repeat;background-size: cover;">
+        {% endfor %}
+
+
+	<div>
+
+		<h1 style="margin-top: 20px;color: red;">WELCOME  TO     BECO MAUZO  SYSTEM</h1>
+		<h2 class="a"><span style="color: black;">BECO</span>  <span>MAUZO</span> WEBSITE  </h2>
+	</div>
+
+  <div>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+<div class="center">
+	<!---
+
+	<html>
+    <head>
+        <style>
+
+body {
+  background:;
+  font-family:"";
+}
+.tabs {
+  position:relative;
+  top:35%;
+  left:37%;
+  transform:translate(-50%,-50%);
+  width:70%;
+  height:450px;
+  background:url(image/m9.jpg);
+  padding:20px 30px;
+  overflow:hidden;
+  border-radius:15px;
+
+}
+.tabs .tab-header {
+  height:60px;
+  display:flex;
+  align-items:center;
+}
+.tabs .tab-header > div {
+  width:calc(100%/ 4);
+  text-align:center;
+  color:green;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:18px;
+  text-transform:uppercase;
+  outline:none;
+}
+.tabs .tab-header > div > i {
+  display:block;
+  margin-bottom:5px;
+}
+.tabs .tab-header > div.active {
+  color:#00acee;
+}
+.tabs .tab-indicator {
+  position:relative;
+  width:calc(100% / 4);
+  height:5px;
+  background:red;
+  left:0px;
+  border-radius:5px;
+  transition:all 500ms ease-in-out;
+}
+.tabs .tab-body {
+  position:relative;
+  height:calc(100% - 60px);
+  padding:10px 5px;
+}
+.tabs .tab-body > div {
+  position:absolute;
+  top:-200%;
+  opacity:100%;
+  transform:scale(0.9);
+  transition:opacity 500ms ease-in-out 0ms,
+    transform 500ms ease-in-out 0ms;
+    color: blue;
+    font-weight: bold;
+}
+.tabs .tab-body > div.active {
+  top:0px;
+  opacity:1;
+  transform:scale(1);
+}
+ .textbox {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #017143;
+    color: #fff;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin-bottom: 2cm;
+}
+ .textbox:hover{
+    background-color: magenta;
+
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="tabs">
+  <div class="tab-header">
+    <div class="active">
+      <i class="fa fa-code"></i> Marketing
+    </div>
+    <div style="color: red;">
+      <i class="fa fa-pencil-square-o"></i> Product
+    </div>
+  </div>
+  <div class="tab-indicator"></div>
+  <div class="tab-body">
+    <div class="active">
+
+
+<!--ya kwanza---->
+
+
+    </div>
+    <div >
+
+<!---ya pili--->
+
+
+<!---         </div>
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+    </body>
+</html>------->
+</div>
+</div> <!--div ya kufunga column ya kwanza ya width 10---->
+<!---ina display images na maelezo yanayoslide ambayo yapo kwenye database-->
+
+<div class="col-md-3" style="background-color: white;">
+  <h1 style="color: blue; font-weight: bold;">NEWS</h1>
+  <marquee behaviour="scroll" height="400px" direction="up" scrollamount="7" top="3cm"style="background:url(image/mmm.jpg;);"  >
+       
+    {% for x in slideimage %}
+       <h2 style="color: red;font-weight: bold;">{{x.title}}</h2>
+       
+    
+ <p style="font-size: 20px;font-weight: bold;color: blue;">
+        {{x.content}}
+    </p>
+    
+ <!--<button class="btn"><a href="Product.php"> Click Here</a></button>---->
+    
+    <img src="{{x.image.url}}" style="height: 200px; width: 300px;">
+   {% endfor %}
+   <!--mwisho wa kudisplay ni hapa-->
+<!-----
+ <h2 style="color: red;font-weight: bold;">KUSHONA NGUO NA KUREPAIR</h2>
+ <p style="font-size: 20px;font-weight: bold;color: green;">
+ Marry Designer tunatoa huduma ya ushonaji na utengenezaji wa nguo aina zote kama vile nguoza maharusi, nguo za sherehe mbalimbali za kidini na za kijamii kama vile sherehe za kipaimara, sherehe za komnio, ubatizo na kazalika. Kupitia kwa mafundi wetu hodari waliobobea katika utengenezaji na ushonaji wa nguo mbalimbali pamoja na mimi tutakuhudumia kwa muda mfupi na kwa gharama nafuu tu.<br> Ili kupata huduma hii ya mafunzo au kwa maelezo zaidi wasiliana nasi kwa kubonyesha hiyo batani hapo chini.<br></p>
+      <button class="btn"><a href="Product.php">Click Here</a></button>
+    <img src="{% static 'project1/images/mm.jpg' %}" style="height: 200px; width: 300px;">
+
+     <h2 style="color: red;font-weight: bold;">BIDHAA ZETU</h2>
+     <p style="font-size: 20px;font-weight: bold;color: black;">
+ Marry Designer tunatoa huduma ya ushonaji na utengenezaji wa nguo aina zote kama vile nguoza maharusi, nguo za sherehe mbalimbali za kidini na za kijamii kama vile sherehe za kipaimara, sherehe za komnio, ubatizo na kazalika. Kupitia kwa mafundi wetu hodari waliobobea katika utengenezaji na ushonaji wa nguo mbalimbali pamoja na mimi tutakuhudumia kwa muda mfupi na kwa gharama nafuu tu.<br> Ili kupata huduma hii ya mafunzo au kwa maelezo zaidi wasiliana nasi kwa kubonyesha hiyo batani hapo chini.<br></p>
+    <img src="{% static 'project1/images/m89.jpg' %}" style="height: 200px; width: 300px;">
+
+     <h2 style="color: red;font-weight: bold;">MATANGAZO</h2>
+     <p style="font-size: 20px;font-weight: bold;color: green;">
+ Marry Designer tunatoa huduma ya ushonaji na utengenezaji wa nguo aina zote kama vile nguoza maharusi, nguo za sherehe mbalimbali za kidini na za kijamii kama vile sherehe za kipaimara, sherehe za komnio, ubatizo na kazalika. Kupitia kwa mafundi wetu hodari waliobobea katika utengenezaji na ushonaji wa nguo mbalimbali pamoja na mimi tutakuhudumia kwa muda mfupi na kwa gharama nafuu tu.<br> Ili kupata huduma hii ya mafunzo au kwa maelezo zaidi wasiliana nasi kwa kubonyesha hiyo batani hapo chini.<br></p>
+    <img src="{% static 'project1/images/mmm.jpg' %}" style="height: 200px; width: 300px;">
+
+     <h2 style="color: red;font-weight: bold;">MAUZO NA MANUNUZI YA BIDHAA</h2>
+     <p style="font-size: 20px;font-weight: bold;color: black;">
+ Marry Designer tunatoa huduma ya ushonaji na utengenezaji wa nguo aina zote kama vile nguoza maharusi, nguo za sherehe mbalimbali za kidini na za kijamii kama vile sherehe za kipaimara, sherehe za komnio, ubatizo na kazalika. Kupitia kwa mafundi wetu hodari waliobobea katika utengenezaji na ushonaji wa nguo mbalimbali pamoja na mimi tutakuhudumia kwa muda mfupi na kwa gharama nafuu tu.<br> Ili kupata huduma hii ya mafunzo au kwa maelezo zaidi wasiliana nasi kwa kubonyesha hiyo batani hapo chini.<br></p>
+    <img src="{% static 'project1/images/mmmm.jpg' %}" style="height: 200px; width: 300px;">
+----->
+  </marquee>
+  {% for x in ceo %}
+  <img src="{{x.image.url}}" style="height: 300px; width: 300px;">
+  <h1 style="color: blue; font-weight: bold;">C.E.O OF {{x.caption}} <br>MAUZO</h1>
+  {% endfor %}
+</div>
+
+
+
+</div>
+
+</div>
+
+<script>
+
+let tabHeader = document.getElementsByClassName("tab-header")[0];
+let tabIndicator = document.getElementsByClassName("tab-indicator")[0];
+let tabBody = document.getElementsByClassName("tab-body")[0];
+
+let tabsPane = tabHeader.getElementsByTagName("div");
+
+for(let i=0;i<tabsPane.length;i++){
+  tabsPane[i].addEventListener("click",function(){
+    tabHeader.getElementsByClassName("active")[0].classList.remove("active");
+    tabsPane[i].classList.add("active");
+    tabBody.getElementsByClassName("active")[0].classList.remove("active");
+    tabBody.getElementsByTagName("div")[i].classList.add("active");
+
+    tabIndicator.style.left = `calc(calc(100% / 4) * ${i})`;
+  });
+}
+</script>
+</div>
+
+
+
+
+  <script src={% static 'project1/"js/wow.min.js' %}"></script><script src="js/jquery-1.12.0.min.js"></script>
+<script src="{% static 'project1/js/bootstrap.min.js' %}"></script>
+
+
+</body>
+</html>
+{% endblock %}
